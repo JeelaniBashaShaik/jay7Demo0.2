@@ -1,0 +1,32 @@
+
+  <div class="row" style="padding:1%">
+    <div class="col s12 m6 l4 xl3" *ngFor="let news of news">
+      <div class="card" [style.height]="'330px'">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator b-lazy"  src="/assets/im1.gif" data-src={{news.urlToImage}} [height]="200" [width]="150" [alt]="news_image">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4" [style.font-size]="'16px'">{{news.title}}</span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"><a [href]="news.url" [target]="_blank">{{news.title}}</a><i class="material-icons right">close</i></span>
+            <p>{{news.description}}</p>
+          </div>
+      </div>
+    </div> 
+    
+    <div class="preloader-wrapper big active" *ngIf="news.length == 0">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+
+
+  </div>
+
