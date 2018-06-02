@@ -49,7 +49,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 
 
 export const firebaseConfig = {
-  apiKey: 'AIzaSyALKAhqoBqrt-aV75jn5L0QcnIWxopxu94',
+  apiKey: 'abcd',
   authDomain: 'jay7demo2.firebaseapp.com',
   databaseURL: 'https://jay7demo2.firebaseio.com',
   projectId: 'jay7demo2',
