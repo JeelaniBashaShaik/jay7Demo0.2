@@ -26,8 +26,10 @@
   "dataGroups": [{
     "name": "apiPerformance",
     "urls": [
-      "/",
-      "/news"
+      "/home",
+      "/news",
+      "/newsHome",
+      "/weather"
     ],
     "cacheConfig": {
       "maxSize": 100,

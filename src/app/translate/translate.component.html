@@ -1,0 +1,46 @@
+<!-- 
+<md-card >
+  <md-card-title style="color:limegreen">
+
+ </md-card-title> 
+ <md-card-content>
+<md-select placeholder="Target Lang.," (change)="selectLanguage($event)" name="language" >
+   <md-option *ngFor="let lang of languages" [value]="lang.code">
+     {{lang.value}}
+   </md-option>
+ </md-select>
+
+  <md-form-field class="example-full-width">
+   <input mdInput placeholder="Query..."  [(ngModel)]="queryWord">
+ </md-form-field>
+
+ <button md-raised-button color="primary" (click)="translate()">Translate</button>
+
+ {{queryResult}}
+ </md-card-content>
+</md-card> -->
+
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card ">
+      <div class="card-content ">
+        <a class="dropdown-button btn" data-activates="dropdown1" href="#" materialize="dropdown">Select Language</a>
+        
+          <!-- Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <li *ngFor="let lang of languages" (click)="selectLanguage(lang)"><a>{{lang.value}}</a></li>  
+          </ul>
+
+
+          <div class="input-field col s6">
+            <input id="query" type="text" [(ngModel)]="queryWord" class="validate">
+            <label for="query">Last Name</label>
+          </div>
+      </div>
+      <div class="card-action">
+        {{queryResult}}
+        <a class="waves-effect waves-light btn" (click)="translate()"><i class="material-icons right">cloud</i>button</a>
+      </div>
+    </div>
+  </div>
+</div>

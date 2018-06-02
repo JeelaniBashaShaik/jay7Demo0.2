@@ -26,7 +26,23 @@ export class HomeComponent implements OnInit {
     $( document ).ready(function() {
       $('#tabs-swipe-demo').tabs({});
       $(".button-collapse").sideNav();
-      var bLazy = new Blazy();
+      var bLazy = new Blazy({ 
+        success: function(ele){
+            // Image has loaded
+            // Do your business here
+            console.log('loaded');
+        }
+      , error: function(ele, msg){
+            if(msg === 'missing'){
+                // Data-src is missing
+                console.log('mssing');
+            }
+            else if(msg === 'invalid'){
+                // Data-src is invalid
+                console.log('invalid');
+            }  
+        }
+    });
    });
    if (typeof(Storage) !== "undefined") {
     this.displayName = localStorage.getItem('userName');
@@ -37,22 +53,7 @@ export class HomeComponent implements OnInit {
   }
   displayName:string;
   displayImage:string;
-  techFlag:boolean=false;
-  natFlag:boolean=false;
-  vergeFlag:boolean=false;
-  tech(){
-    this.techFlag = true;
-    console.log("inside tech flag");
-  }
-  nat(){
-    this.natFlag = true;
-    console.log("inside nat flag");
-  }
-
-  verge(){
-    this.vergeFlag = true;
-    console.log("inside verge flag");
-  }
+ 
 
   logout() {
     this.afAuth.auth.signOut().then(data=>{

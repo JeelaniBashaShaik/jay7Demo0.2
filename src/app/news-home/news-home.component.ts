@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchService } from './../fetch.service';
-declare var $:any;
-declare var Blazy:any;
+
 @Component({
   selector: 'app-news-home',
   templateUrl: './news-home.component.html',
@@ -10,7 +9,7 @@ declare var Blazy:any;
 export class NewsHomeComponent implements OnInit {
 
   news=[];
-  toiNewsUrl='https://newsapi.org/v1/articles?source=the-times-of-india&sortBy=top&apiKey=2d99d74987364e95aaf013993c90327c';
+  bbcNewsUrl='https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=2d99d74987364e95aaf013993c90327c';
   hinduNewsUrl='https://newsapi.org/v1/articles?source=the-hindu&sortBy=top&apiKey=2d99d74987364e95aaf013993c90327c';
   techRadarNewsUrl='https://newsapi.org/v1/articles?source=techradar&sortBy=top&apiKey=2d99d74987364e95aaf013993c90327c';
   natGeoNewsUrl='https://newsapi.org/v1/articles?source=national-geographic&sortBy=top&apiKey=2d99d74987364e95aaf013993c90327c';
@@ -19,32 +18,23 @@ export class NewsHomeComponent implements OnInit {
 
  constructor(private _fetchService:FetchService){}
   ngOnInit(){
-    
-
-    $( document ).ready(function() {
-      $('#tabs-swipe-demo').tabs({
-      
-      });
-      var bLazy = new Blazy();
-   });
+ 
   }
 
   techFlag:boolean=false;
   natFlag:boolean=false;
   vergeFlag:boolean=false;
   newScFlag:boolean=false;
+
   tech(){
     this.techFlag = true;
-    console.log("inside tech flag");
   }
   nat(){
     this.natFlag = true;
-    console.log("inside nat flag");
   }
 
   verge(){
     this.vergeFlag = true;
-    console.log("inside verge flag");
   }
   newSc(){
     this.newScFlag = true;

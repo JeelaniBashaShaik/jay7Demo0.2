@@ -1,0 +1,10 @@
+<p>
+  file works!
+</p>
+<input type="file" (change)="uploadFile($event)" />
+<div>{{ uploadPercent | async }}</div>
+<a *ngIf="progress == 100" [href]="downloadURL | async">download file</a>
+
+<div class="progress" *ngIf="uploadPercent">
+  <div class="determinate" [style.width]="progress +'%'"></div>
+</div>

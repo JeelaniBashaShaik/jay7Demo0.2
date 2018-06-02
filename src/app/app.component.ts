@@ -9,34 +9,93 @@ declare var Blazy:any;
 })
 export class AppComponent implements OnInit{
   title = 'app';
- 
+ cols=[];
   constructor(private _fetchService:FetchService){}
   ngOnInit(){
-    
-
-    $( document ).ready(function() {
-    /*   $('#tabs-swipe-demo').tabs({
-        swipeable: true,
-        responsiveThreshold: Infinity
-      }); */
-      var bLazy = new Blazy();
-   });
+    Object.keys(this.dataArray[0]).map(prop=>{
+      let y = {name:prop};
+      this.cols = [...this.cols,y];
+  });
   }
-
-  techFlag:boolean=false;
-  natFlag:boolean=false;
-  vergeFlag:boolean=false;
-  tech(){
-    this.techFlag = true;
-    console.log("inside tech flag");
+  dataArray = [
+    {
+        "userId": 256,
+        "id": 1,
+        "title": "delectus",
+        "completed": false
+    },
+    {
+        "userId": 89,
+        "id": 2,
+        "title": "quis ut",
+        "completed": false
+    },
+    {
+        "userId": 64,
+        "id": 3,
+        "title": "fugiat",
+        "completed": false
+    },
+    {
+        "userId": 23,
+        "id": 4,
+        "title": "tempora",
+        "completed": true
+    },
+    {
+        "userId": 100,
+        "id": 5,
+        "title": "laboriosam",
+        "completed": false
+    },
+    {
+        "userId": 999,
+        "id": 6,
+        "title": "ratione ",
+        "completed": false
+    },
+    {
+        "userId": 210,
+        "id": 7,
+        "title": "expedita",
+        "completed": false
+    },
+    {
+        "userId": 654,
+        "id": 8,
+        "title": "adipisci",
+        "completed": true
+    },
+    {
+      "userId": 24,
+      "id": 9,
+      "title": "tempora1",
+      "completed": true
+  },
+  {
+      "userId": 98,
+      "id": 10,
+      "title": "laboriosam1",
+      "completed": false
+  },
+  {
+      "userId": 329,
+      "id": 11,
+      "title": "ratione1",
+      "completed": false
+  },
+  {
+      "userId": 247,
+      "id": 12,
+      "title": "expedita1",
+      "completed": false
+  },
+  {
+      "userId":30,
+      "id": 13,
+      "title": "adipisci1",
+      "completed": true
   }
-  nat(){
-    this.natFlag = true;
-    console.log("inside nat flag");
-  }
-
-  verge(){
-    this.vergeFlag = true;
-    console.log("inside verge flag");
-  }
+];
+ 
 }

@@ -8,11 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  cols=[];
+  
   constructor(public afAuth: AngularFireAuth,private router:Router) {
     this.afAuth.authState.subscribe(data=>{
       this.router.navigateByUrl('/home');
     })
+
+    
   }
   login() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(data=>{

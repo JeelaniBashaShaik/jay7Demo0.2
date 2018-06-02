@@ -2,3 +2,19 @@
   /*   width: 130px;
     height: 160px; */
   }
+
+  .xc{
+    z-index: 1800;
+  }
+  .navbar-fixed{
+      height:46px;
+  }
+  .navbar-fixed nav {
+    position: fixed;
+    height: 46px;
+    line-height: 44px;
+}
+nav .button-collapse i {
+    height: 46px;
+    line-height: 46px;
+}

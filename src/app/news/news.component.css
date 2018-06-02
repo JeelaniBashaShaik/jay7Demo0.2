@@ -1,0 +1,21 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+    margin-top:50%;
+  }
+
+  .entireComp{
+      padding:1%;
+      margin-top:3%;
+  }
+
+  .card .card-content .card-title {
+    display: block;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+
+.titleHover:hover{
+    color:lightcoral !important;
+    font-size:20px !important;
+}
